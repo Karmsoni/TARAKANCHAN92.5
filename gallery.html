@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Tarakanchan 92.5 Silver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary-black: #6F4C57;
+            --secondary-black: #6F4C57;
+            --primary-silver: #ffffff;
+            --accent-silver: #000000;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-black);
+            color: var(--primary-silver);
+            overflow-x: hidden;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--primary-black);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-silver);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Gallery Section */
+        .gallery-card {
+            background: linear-gradient(145deg, #8B6D79, #242424);
+            border: 1px solid rgba(192, 192, 192, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .gallery-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgb(0, 0, 0);
+            border-color: var(--primary-silver);
+        }
+        
+        .gallery-img {
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-card:hover .gallery-img {
+            transform: scale(1.05);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--secondary-black);
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+            padding: 2rem 0;
+        }
+        
+        .footer-link {
+            transition: all 0.2s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary-silver);
+            transform: translateX(5px);
+        }
+        
+        .footer-title {
+            position: relative;
+            display: inline-block;
+            color: #c0c0c0;
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 2px;
+            background: #c0c0c0;
+            transition: width 0.3s ease;
+        }
+
+        .footer-title:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 px-4 lg:px-8 py-4">
+        <div class="max-w-7-xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="logo.jpg.PNG" alt="Tarakanchan Logo" class="h-12 mr-10">
+            </a>
+            <div class="hidden lg:flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-silver-300 transition">Home</a>
+                <a href="collection.html" class="nav-link text-white hover:text-silver-300 transition">Collections</a>
+                <a href="about.html" class="nav-link text-white hover:text-silver-300 transition">About</a>
+                <a href="gallery.html" class="nav-link text-white hover:text-silver-300 transition">Gallery</a>
+                <a href="contact.html" class="nav-link text-white hover:text-silver-300 transition">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fas fa-user"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition relative">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="absolute -top-2 -right-2 bg-silver-500 text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                </a>
+                <button class="lg:hidden text-gray-400 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section class="py-20 px-4 lg:px-8 max-w-7xl mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 heading-font silver-text">OUR <span class="text-white">GALLERY</span></h2>
+            <p class="text-gray-400 max-w-2xl mx-auto">Explore our exquisite collection of handcrafted silver jewelry.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Jewelry Item 1 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Elegant Silver Necklace" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Elegant Silver Necklace</h3>
+                <p class="text-gray-400 mb-4">A stunning piece that adds elegance to any outfit.</p>
+            </div>
+            <!-- Jewelry Item 2 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic3.jpg.jpg" alt="Traditional Silver Earrings" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Traditional Silver Earrings</h3>
+                <p class="text-gray-400 mb-4">Beautifully crafted earrings that reflect cultural heritage.</p>
+            </div>
+            <!-- Jewelry Item 3 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic4.jpg.jpg" alt="Modern Silver Bracelet" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Modern Silver Bracelet</h3>
+                <p class="text-gray-400 mb-4">A contemporary design perfect for everyday wear.</p>
+            </div>
+            <!-- Jewelry Item 4 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic5.jpg.jpg" alt="Silver Ring with Gemstone" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Ring with Gemstone</h3>
+                <p class="text-gray-400 mb-4">A unique ring featuring a vibrant gemstone.</p>
+            </div>
+            <!-- Jewelry Item 5 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic6.jpg.jpg" alt="Silver Pendant" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Pendant</h3>
+                <p class="text-gray-400 mb-4">A delicate pendant that adds charm to any necklace.</p>
+            </div>
+            <!-- Jewelry Item 6 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Intricate Silver Cuff" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Intricate Silver Cuff</h3>
+                <p class="text-gray-400 mb-4">A bold cuff bracelet with intricate detailing.</p>
+            </div>
+            <!-- Jewelry Item 7 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Anklet" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Anklet</h3>
+                <p class="text-gray-400 mb-4">A charming anklet that adds elegance to your feet.</p>
+            </div>
+            <!-- Jewelry Item 8 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Brooch" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Brooch</h3>
+                <p class="text-gray-400 mb-4">A stylish brooch that enhances any outfit.</p>
+            </div>
+            <!-- Jewelry Item 9 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Hairpin" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Hairpin</h3>
+                <p class="text-gray-400 mb-4">An elegant hairpin that adds a touch of sophistication.</p>
+            </div>
+            <!-- Jewelry Item 10 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Charm Bracelet" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Charm Bracelet</h3>
+                <p class="text-gray-400 mb-4">A playful charm bracelet perfect for personal expression.</p>
+            </div>
+            <!-- Jewelry Item 11 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Choker" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Choker</h3>
+                <p class="text-gray-400 mb-4">A chic choker that adds a modern touch to your look.</p>
+            </div>
+            <!-- Jewelry Item 12 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Statement Ring" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Statement Ring</h3>
+                <p class="text-gray-400 mb-4">A bold statement ring that captures attention.</p>
+            </div>
+            <!-- Jewelry Item 13 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Drop Earrings" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Drop Earrings</h3>
+                <p class="text-gray-400 mb-4">Elegant drop earrings that sway with your movements.</p>
+            </div>
+            <!-- Jewelry Item 14 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Bangle" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Bangle</h3>
+                <p class="text-gray-400 mb-4">A classic bangle that complements any outfit.</p>
+            </div>
+            <!-- Jewelry Item 15 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Cufflinks" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Cufflinks</h3>
+                <p class="text-gray-400 mb-4">Stylish cufflinks that add elegance to formal attire.</p>
+            </div>
+            <!-- Jewelry Item 16 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Hairband" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Hairband</h3>
+                <p class="text-gray-400 mb-4">A beautiful hairband that enhances your hairstyle.</p>
+            </div>
+            <!-- Jewelry Item 17 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Toe Ring" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Toe Ring</h3>
+                <p class="text-gray-400 mb-4">A charming toe ring perfect for summer days.</p>
+            </div>
+            <!-- Jewelry Item 18 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Locket" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Locket</h3>
+                <p class="text-gray-400 mb-4">A sentimental locket to keep your loved ones close.</p>
+            </div>
+            <!-- Jewelry Item 19 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Chain" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Chain</h3>
+                <p class="text-gray-400 mb-4">A versatile chain that can be worn alone or with pendants.</p>
+            </div>
+            <!-- Jewelry Item 20 -->
+            <div class="gallery-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic2.jpg.jpg" alt="Silver Keychain" class="w-full h-64 object-cover gallery-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Keychain</h3>
+                <p class="text-gray-400 mb-4">A stylish keychain that adds a touch of elegance to your keys.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                <!-- About Section -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 footer-title">About Us</h3>
+                    <p class="text-gray-400 mb-4">
+                        Premium silver jewelry crafted with passion and precision since 1995.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="social-icon text-gray-400 hover:text-silver-300 transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-silver-300 transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-silver-300 transition">
+                            <i class="fab fa-pinterest"></i>
+                        </a>
+                        <a href="#" class="social-icon text-gray-400 hover:text-silver-300 transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 footer-title">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href ="index.html" class="footer-link text-gray-400 hover:text-silver-300">Home</a></li>
+                        <li><a href="collection.html" class="footer-link text-gray-400 hover:text-silver-300">Collections</a></li>
+                        <li><a href="about.html" class="footer-link text-gray-400 hover:text-silver-300">About Us</a></li>
+                        <li><a href="gallery.html" class="footer-link text-gray-400 hover:text-silver-300">Gallery</a></li>
+                        <li><a href="contact.html" class="footer-link text-gray-400 hover:text-silver-300">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 footer-title">Customer Service</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-silver-300">FAQs</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-silver-300">Shipping Policy</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-silver-300">Returns & Exchanges</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-silver-300">Size Guide</a></li>
+                        <li><a href="#" class="footer-link text-gray-400 hover:text-silver-300">Jewelry Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 footer-title">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe for exclusive offers and silver jewelry trends.
+                    </p>
+                    <form class="flex flex-col space-y-3">
+                        <input type="email" placeholder="Your email address" 
+                               class="newsletter-input rounded-lg px-4 py-2 focus:outline-none">
+                        <button type="submit" class="btn-silver py-2 rounded-md uppercase tracking-wider">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-t border-gray-800 my-10"></div>
+
+            <!-- Bottom Footer -->
+            <div class="flex flex-col md:flex-row justify-between items-center text-center">
+                <p class="text-gray-500 mb-4 md:mb-0 text-sm">
+                    © 2023 Tarakanchan 92.5 Silver. All rights reserved.
+                </p>
+                <div class="flex space-x-6">
+                    <a href="#" class="footer-link text-gray-400 hover:text-silver-300 text-sm">Privacy Policy</a>
+                    <a href="#" class="footer-link text-gray-400 hover:text-silver-300 text-sm">Terms of Service</a>
+                    <a href="#" class="footer-link text-gray-400 hover:text-silver-300 text-sm">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

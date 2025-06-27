@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - Tarakanchan 92.5 Silver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        :root {
+            --primary-black: #6F4C57;
+            --secondary-black: #6F4C57;
+            --primary-silver: #ffffff;
+            --accent-silver: #000000;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--primary-black);
+            color: var(--primary-silver);
+            overflow-x: hidden;
+        }
+        
+        .heading-font {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background-color: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            background-color: var(--primary-black);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .nav-link {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-silver);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Product Section */
+        .product-section {
+            padding: 2rem 0;
+        }
+        
+        .product-card {
+            background: linear-gradient(145deg, #8B6D79, #242424);
+            border: 1px solid rgba(192, 192, 192, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgb(0, 0, 0);
+            border-color: var(--primary-silver);
+        }
+        
+        .product-img {
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        
+        /* Button Styles */
+        .btn-silver {
+            background-color: var(--primary-silver);
+            color: var(--primary-black);
+            font-weight: 600;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+        
+        .btn-silver:hover {
+            background-color: rgba(192, 192, 192, 0.8);
+        }
+        
+        .btn-outline-silver {
+            border: 2px solid var(--primary-silver);
+            color: var(--primary-silver);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-silver:hover {
+            background-color: var(--primary-silver);
+            color: var(--primary-black);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--secondary-black);
+            border-top: 1px solid rgba(192, 192, 192, 0.1);
+        }
+        
+        .footer-link {
+            transition: all 0.2s ease;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary-silver);
+            transform: translateX(5px);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar fixed w-full z-50 px-4 lg:px-8 py-4">
+        <div class="max-w-7-xl mx-auto flex justify-between items-center">
+            <a href="#" class="flex items-center">
+                <img src="logo.jpg.PNG" alt="Tarakanchan Logo" class="h-12 mr-10">
+            </a>
+            <div class="hidden lg:flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-silver-300 transition">Home</a>
+                <a href="collection.html" class="nav-link text-white hover:text-silver-300 transition">Collections</a>
+                <a href="about.html" class="nav-link text-white hover:text-silver-300 transition">About</a>
+                <a href="gallery.html" class="nav-link text-white hover:text-silver-300 transition">Gallery</a>
+                <a href="contact.html" class="nav-link text-white hover:text-silver-300 transition">Contact</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fas fa-search"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition"><i class="fas fa-user"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition relative">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="absolute -top-2 -right-2 bg-silver-500 text-black text-xs font-bold rounded-full w-5 h-5 flex items-center justify-center">3</span>
+                </a>
+                <button class="lg:hidden text-gray-400 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Section -->
+    <section class="product-section py-20 px-4 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <!-- Product 1 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic5.jpg.jpg" alt="Silver Necklace" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Luxe Silver Necklace</h3>
+                <p class="text-gray-400 mb-4">Exquisite statement piece that elevates any outfit.</p>
+                <p class="text-lg font-bold mb-4">₹1500.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic3.jpg.jpg" alt="Silver Ring" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Signature Silver Ring</h3>
+                <p class="text-gray-400 mb-4">Timeless design for every occasion.</p>
+                <p class="text-lg font-bold mb-4">₹750.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic4.jpg.jpg" alt="Silver Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Classic Silver Bracelet</h3>
+                <p class="text-gray-400 mb-4">Sophisticated wrist adornment with delicate details.</p>
+                <p class="text-lg font-bold mb-4">₹1000.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic6.jpg.jpg" alt="Silver Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Elegant Silver Earrings</h3>
+                <p class="text-gray-400 mb-4">Beautifully crafted earrings for any occasion.</p>
+                <p class="text-lg font-bold mb-4">₹850.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic7.jpg.jpg" alt="Silver Pendant" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Pendant</h3>
+                <p class="text-gray-400 mb-4">A delicate pendant that adds charm to any necklace.</p>
+                <p class="text-lg font-bold mb-4">₹600.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic8.jpg.jpg" alt="Silver Brooch" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Stylish Silver Brooch</h3>
+                <p class="text-gray-400 mb-4">A unique brooch that enhances any outfit.</p>
+                <p class="text-lg font-bold mb-4">₹700.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 7 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic9.jpg.jpg" alt="Silver Cufflinks" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Elegant Silver Cufflinks</h3>
+                <p class="text-gray-400 mb-4">Perfect for formal occasions.</p>
+                <p class="text-lg font-bold mb-4">₹900.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 8 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic10.jpg.jpg" alt="Silver Anklet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Charming Silver Anklet</h3>
+                <p class="text-gray-400 mb-4">A beautiful anklet that adds elegance to your feet.</p>
+                <p class="text-lg font-bold mb-4">₹500.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 9 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic11.jpg.jpg" alt="Silver Hairpin" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Elegant Silver Hairpin</h3>
+                <p class="text-gray-400 mb-4">A stylish hairpin that adds a touch of sophistication.</p>
+                <p class="text-lg font-bold mb-4">₹300.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 10 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic12.jpg.jpg" alt="Silver Choker" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Stylish Silver Choker</h3>
+                <p class="text-gray-400 mb-4">A chic choker that adds a modern touch to your look.</p>
+                <p class="text-lg font-bold mb-4">₹650.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 11 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic13.jpg.jpg" alt="Silver Toe Ring" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Charming Silver Toe Ring</h3>
+                <p class="text-gray-400 mb-4">A delightful toe ring perfect for summer days.</p>
+                <p class="text-lg font-bold mb-4">₹400.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 12 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic14.jpg.jpg" alt="Silver Locket" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Locket</h3>
+                <p class="text-gray-400 mb-4">A sentimental locket to keep your loved ones close.</p>
+                <p class="text-lg font-bold mb-4">₹800.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 13 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic15.jpg.jpg" alt="Silver Chain" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Chain</h3>
+                <p class="text-gray-400 mb-4">A versatile chain that can be worn alone or with pendants.</p>
+                <p class="text-lg font-bold mb-4">₹1200.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 14 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic16.jpg.jpg" alt="Silver Keychain" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Keychain</h3>
+                <p class="text-gray-400 mb-4">A stylish keychain that adds a touch of elegance to your keys.</p>
+                <p class="text-lg font-bold mb-4">₹250.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 15 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic17.jpg.jpg" alt="Silver Hairband" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Hairband</h3>
+                <p class="text-gray-400 mb-4">A chic hairband that adds a touch of glamour.</p>
+                <p class="text-lg font-bold mb-4">₹450.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 16 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic18.jpg.jpg" alt="Silver Bangle" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Bangle</h3>
+                <p class="text-gray-400 mb-4">A classic bangle that complements any outfit.</p>
+                <p class="text-lg font-bold mb-4">₹950.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 17 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic19.jpg.jpg" alt="Silver Studs" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Studs</h3>
+                <p class="text-gray-400 mb-4">Simple yet elegant studs for everyday wear.</p>
+                <p class="text-lg font-bold mb-4">₹350.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 18 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic20.jpg.jpg" alt="Silver Necklace Set" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Necklace Set</h3>
+                <p class="text-gray-400 mb-4">A complete set that enhances your beauty.</p>
+                <p class="text-lg font-bold mb-4">₹1800.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 19 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic21.jpg.jpg" alt="Silver Ankle Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Ankle Bracelet</h3>
+                <p class="text-gray-400 mb-4">A delicate bracelet that adorns your ankle.</p>
+                <p class="text-lg font-bold mb-4">₹700.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 20 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic22.jpg.jpg" alt="Silver Finger Ring" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Finger Ring</h3>
+                <p class="text-gray-400 mb-4">A stylish ring that makes a statement.</p>
+                <p class="text-lg font-bold mb-4">₹500.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 21 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic23.jpg.jpg" alt="Silver Hair Clip" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Hair Clip</h3>
+                <p class="text-gray-400 mb-4">A beautiful clip to hold your hair in style.</p>
+                <p class="text-lg font-bold mb-4">₹300.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 22 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic24.jpg.jpg" alt="Silver Pendant Set" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Pendant Set</h3>
+                <p class="text-gray-400 mb-4">A matching set that adds elegance to your look.</p>
+                <p class="text-lg font-bold mb-4">₹1200.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 23 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic25.jpg.jpg" alt="Silver Chandelier Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Chandelier Earrings</h3>
+                <p class="text-gray-400 mb-4">Dazzling earrings that catch the light beautifully.</p>
+                <p class="text-lg font-bold mb-4">₹1500.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 24 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic26.jpg.jpg" alt="Silver Statement Ring" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Statement Ring</h3>
+                <p class="text-gray-400 mb-4">A bold ring that makes a statement.</p>
+                <p class="text-lg font-bold mb-4">₹950.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 25 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic27.jpg.jpg" alt="Silver Infinity Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Infinity Bracelet</h3>
+                <p class="text-gray-400 mb-4">A symbol of eternity and love.</p>
+                <p class="text-lg font-bold mb-4">₹1100.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 26 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic28.jpg.jpg" alt="Silver Heart Pendant" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Heart Pendant</h3>
+                <p class="text-gray-400 mb-4">A lovely pendant that symbolizes love.</p>
+                <p class="text-lg font-bold mb-4">₹800.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 27 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic29.jpg.jpg" alt="Silver Leaf Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Leaf Earrings</h3>
+                <p class="text-gray-400 mb-4">Nature-inspired earrings that are lightweight and elegant.</p>
+                <p class="text-lg font-bold mb-4">₹600.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 28 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic30.jpg.jpg" alt="Silver Gemstone Ring" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Gemstone Ring</h3>
+                <p class="text-gray-400 mb-4">A stunning ring featuring a beautiful gemstone.</p>
+                <p class="text-lg font-bold mb-4">₹1300.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 29 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic31.jpg.jpg" alt="Silver Beaded Necklace" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Beaded Necklace</h3>
+                <p class="text-gray-400 mb-4">A trendy necklace adorned with beautiful beads.</p>
+                <p class="text-lg font-bold mb-4">₹950.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 30 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic32.jpg.jpg" alt="Silver Spiral Ring" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Spiral Ring</h3>
+                <p class="text-gray-400 mb-4">A unique spiral design that stands out.</p>
+                <p class="text-lg font-bold mb-4">₹700.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 31 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic33.jpg.jpg" alt="Silver Twisted Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Twisted Bracelet</h3>
+                <p class="text-gray-400 mb-4">A stylish bracelet with a twisted design.</p>
+                <p class="text-lg font-bold mb-4">₹850.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 32 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic34.jpg.jpg" alt="Silver Bar Necklace" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Bar Necklace</h3>
+                <p class="text-gray-400 mb-4">A minimalist bar necklace for a modern look.</p>
+                <p class="text-lg font-bold mb-4">₹600.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 33 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic35.jpg.jpg" alt="Silver Circle Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Circle Earrings</h3>
+                <p class="text-gray-400 mb-4">Simple circle earrings that are perfect for everyday wear.</p>
+                <p class="text-lg font-bold mb-4">₹400.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 34 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic36.jpg.jpg" alt="Silver Gemstone Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Gemstone Earrings</h3>
+                <p class="text-gray-400 mb-4">Elegant earrings featuring beautiful gemstones.</p>
+                <p class="text-lg font-bold mb-4">₹1200.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 35 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic37.jpg.jpg" alt="Silver Dangle Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Dangle Earrings</h3>
+                <p class="text-gray-400 mb-4">Stylish dangle earrings that add flair to any outfit.</p>
+                <p class="text-lg font-bold mb-4">₹950.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 36 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic38.jpg.jpg" alt="Silver Cuff Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Cuff Bracelet</h3>
+                <p class="text-gray-400 mb-4">A bold cuff bracelet that makes a statement.</p>
+                <p class="text-lg font-bold mb-4">₹1200.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 37 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic39.jpg.jpg" alt="Silver Chain Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Chain Bracelet</h3>
+                <p class="text-gray-400 mb-4">A stylish chain bracelet that adds elegance.</p>
+                <p class="text-lg font-bold mb-4">₹800.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 38 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic40.jpg.jpg" alt="Silver Beaded Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Beaded Bracelet</h3>
+                <p class="text-gray-400 mb-4">A trendy bracelet adorned with beautiful beads.</p>
+                <p class="text-lg font-bold mb-4">₹950.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 39 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic41.jpg.jpg" alt="Silver Infinity Necklace" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Infinity Necklace</h3>
+                <p class="text-gray-400 mb-4">A beautiful infinity necklace symbolizing eternity.</p>
+                <p class="text-lg font-bold mb-4">₹1100.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 40 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic42.jpg.jpg" alt="Silver Heart Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Heart Earrings</h3>
+                <p class="text-gray-400 mb-4">Charming heart-shaped earrings for a romantic touch.</p>
+                <p class="text-lg font-bold mb-4">₹600.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 41 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic43.jpg.jpg" alt="Silver Star Pendant" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Star Pendant</h3>
+                <p class="text-gray-400 mb-4">A whimsical star pendant that shines bright.</p>
+                <p class="text-lg font-bold mb-4">₹700.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 42 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic44.jpg.jpg" alt="Silver Moon Necklace" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Moon Necklace</h3>
+                <p class="text-gray-400 mb-4">A delicate moon necklace for celestial lovers.</p>
+                <p class="text-lg font-bold mb-4">₹800.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 43 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic45.jpg.jpg" alt="Silver Butterfly Brooch" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Butterfly Brooch</h3>
+                <p class="text-gray-400 mb-4">A charming butterfly brooch that adds elegance.</p>
+                <p class="text-lg font-bold mb-4">₹900.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 44 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic46.jpg.jpg" alt="Silver Gemstone Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Gemstone Bracelet</h3>
+                <p class="text-gray-400 mb-4">A stunning bracelet featuring beautiful gemstones.</p>
+                <p class="text-lg font-bold mb-4">₹1300.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 45 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic47.jpg.jpg" alt="Silver Twisted Ring" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Twisted Ring</h3>
+                <p class="text-gray-400 mb-4">A unique twisted design that stands out.</p>
+                <p class="text-lg font-bold mb-4">₹750.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 46 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic48.jpg.jpg" alt="Silver Link Bracelet" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Link Bracelet</h3>
+                <p class="text-gray-400 mb-4">A classic link bracelet that never goes out of style.</p>
+                <p class="text-lg font-bold mb-4">₹900.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 47 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic49.jpg.jpg" alt="Silver Bar Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Bar Earrings</h3>
+                <p class="text-gray-400 mb-4">Minimalist bar earrings for a modern look.</p>
+                <p class="text-lg font-bold mb-4">₹600.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 48 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic50.jpg.jpg" alt="Silver Hoop Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Hoop Earrings</h3>
+                <p class="text-gray-400 mb-4">Classic hoop earrings that are always in style.</p>
+                <p class="text-lg font-bold mb-4">₹800.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 49 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic51.jpg.jpg" alt="Silver Drop Earrings" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Drop Earrings</h3>
+                <p class="text-gray-400 mb-4">Elegant drop earrings that add sophistication.</p>
+                <p class="text-lg font-bold mb-4">₹950.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+            <!-- Product 50 -->
+            <div class="product-card rounded-xl p-6">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="pic52.jpg.jpg" alt="Silver Cluster Ring" class="w-full h-64 object-cover product-img">
+                </div>
+                <h3 class="text-xl font-semibold mb-2">Silver Cluster Ring</h3>
+                <p class="text-gray-400 mb-4">A stunning cluster ring that captures attention.</p>
+                <p class="text-lg font-bold mb-4">₹1200.00</p>
+                <div class="flex space-x-4">
+                    <button class="btn-silver px-4 py-2 rounded-md">Add to Cart</button>
+                    <button class="btn-outline-silver px-4 py-2 rounded-md">Buy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
